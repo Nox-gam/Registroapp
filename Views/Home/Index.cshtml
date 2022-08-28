@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Registroapp.Models.RegistroModel
+
+
+<h1>Registro de Curso</h1>
+
+<form role="form" asp-controller="Home" asp-action="CalcularCurso">
+
+    <div class="form-group">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-sm-8 col-sm-offset-2">
+            <strong><label asp-for="Estudiante" class="control-label"></label></strong>
+            <input asp-for="Estudiante" class="form-control">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <div class="col-sm-8 col-sm-offset-2">
+                <strong><label asp-for="Curso"></label></strong>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+               <input type="checkbox" asp-for="Matematica">
+               <input asp-for="Matematica" type="hidden" value="Matematica"/>
+               <label asp-for="Matematica" class="control-label"></label>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+               <input type="checkbox" asp-for="Lenguaje">
+               <label asp-for="Lenguaje" class="control-label"></label>
+            </div>
+            <div class="col-sm-8 col-sm-offset-2">
+               <input type="checkbox" asp-for="Historia">
+               <label asp-for="Historia" class="control-label"></label>
+            </div>
+        </div>
+        <br>
+         <button class="btn btn-primary" id="submit" type="submit">
+         Calcular
+      </button>
+       <br>
+</form>
+
+</div>
+    <h1>@ViewData["Message1"]</h1>
+    <h1>@ViewData["Message2"]</h1>
+    <h1>@ViewData["Message3"]</h1>
+    </div>
